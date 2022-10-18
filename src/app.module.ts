@@ -3,9 +3,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CategoriaModule } from './categoria/categoria.module';
+import { CategoriaController } from './categoria/controllers/categoria.controller';
 import { Categoria } from './categoria/entities/categoria.entity';
+import { CategoriaService } from './categoria/services/categoria.service';
+import { ProdutoController } from './produto/controllers/produto.controller';
 import { Produto } from './produto/entities/produto.entity';
 import { ProdutoModule } from './produto/produto.module';
+import { ProdutoService } from './produto/services/produto.service';
 
 @Module({
   imports: [
@@ -22,7 +26,7 @@ import { ProdutoModule } from './produto/produto.module';
     CategoriaModule,
     ProdutoModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, ProdutoController, CategoriaController],
+  providers: [AppService, ProdutoService, CategoriaService],
 })
 export class AppModule {}
