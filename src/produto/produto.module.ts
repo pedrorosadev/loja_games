@@ -8,9 +8,9 @@ import { Produto } from "./entities/produto.entity";
 import { ProdutoService } from "./services/produto.service";
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Produto]), CategoriaModule],
-    controllers: [ProdutoController, CategoriaController],
-    providers: [ProdutoService, CategoriaService],
+    imports: [TypeOrmModule.forFeature([Produto])],
+    controllers: [ProdutoController],
+    providers: [ProdutoService],
     exports: [TypeOrmModule]
 })
 
