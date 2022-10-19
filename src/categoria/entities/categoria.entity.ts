@@ -6,14 +6,13 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 @Entity({name:'tb_categoria'})
 export class Categoria{
     @PrimaryGeneratedColumn()
-    id : number
+    id:number
 
     @IsNotEmpty()
     @Column({length:50, nullable:false})
     descricao
     
-    @OneToMany(() => Produto, (produto) => produto.categoria, {
-        onDelete: "CASCADE"
-    })
+    @OneToMany(() => Produto, (produto) => produto.categoria)
     produto: Produto;
+
 }
